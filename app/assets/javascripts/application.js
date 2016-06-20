@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require lib/angular.min.js
 //= require lib/angular-route.min.js
+//= require lib/angular-ui-router.min.js
 //= require angular/app.js
+//= require angular/controllers/searchController.js
