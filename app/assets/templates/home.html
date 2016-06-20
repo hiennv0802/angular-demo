@@ -2,4 +2,49 @@
   <h1>Home Page</h1>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
   <p><a class="btn btn-lg btn-success" href="javascript:;" role="button">Get started today</a></p>
+  <div ng-app="user_form" >
+  	<form >
+  		<table class="table borderless">
+  			<tr>
+  				<td class="col-md-1">Name:</td>
+  				<td class="col-md-6"><input type="text" ng-model="name"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Email: </td>
+  				<td><input type="email" ng-model="email"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Phone: </td>
+  				<td><input type="text" ng-model="phone"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Date:</td>
+  				<td> <input type="date" ng-model="date"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Gender: </td>
+  				<td><input type="radio" name="gender" value="Male" >Male <input type="radio" name="gender" value="Female"/>Female<br></td>
+  			</tr>
+  			<tr>
+  				<td>City: </td>
+  				<td><input type="text" ng-city="city"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Country: </td>
+  				<td><input type="text" ng-country="country"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Address: </td>
+  				<td><input type="text" ng-address="address"><br></td>
+  			</tr>
+  			<tr>
+  				<td>Introduce: </td>
+  				<td><input type="text" ng-intro="intro"><br></td>
+  			</tr>
+  			<tr>
+  				<td colspan="2" class="col-md-1 col-md-offset-2"><input type="submit" value="Submit" ng-click="sendData()"></td>
+  			</tr>
+  		</table>
+  	</form>
+  </div>
 </div>
