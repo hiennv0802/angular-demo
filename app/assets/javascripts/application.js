@@ -18,3 +18,4 @@
 //= require lib/angular-ui-router.min.js
 //= require angular/app.js
 //= require angular/controllers/searchController.js
+//= require angular/user.js

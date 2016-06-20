@@ -17,7 +17,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
     });
 
     $routeProvider.when('/services', {
-        templateUrl: '/assets/services.html'
+        templateUrl: '/assets/services.html',
+        controller: 'users_controller'
     });
 
     $routeProvider.when('/downloads', {

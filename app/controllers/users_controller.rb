@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
-	# protect_from_forgery with: :null_session
 	protect_from_forgery with: :null_session, only: Proc.new { |c| c.request.format.json? }
+
+	def index
+		@users = User.all.limit(params[:data])
+		render json: @users
+	end
+
 	def new
 		@user = User.new user_params
 	end
