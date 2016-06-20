@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all.limit(params[:data])
-		render json: @users
+		@number = (User.all.size/25.0).ceil
+		render json: {datas: {users: @users, numbers: @number}}
 	end
 
 	def new

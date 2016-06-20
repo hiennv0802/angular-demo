@@ -7,7 +7,8 @@ myApp.controller("users_controller", ["$scope", "$http", function($scope, $http)
 	];
 	$http.get("users")
 	.success(function(data) {
-		$scope.users = data
+		$scope.users = data["datas"]["users"]
+		$scope.numbers = data["datas"]["numbers"]
 	});
 
 	$scope.sendLimit = function() {
@@ -15,7 +16,7 @@ myApp.controller("users_controller", ["$scope", "$http", function($scope, $http)
 		url = "users?data=" + data_send;
 		$http.get(url)
 		.success(function(data_return) {
-			$scope.users = data_return
+			$scope.users = data_return["datas"]["users"]
 		});
 	}
 }]);
