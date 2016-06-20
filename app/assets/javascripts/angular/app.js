@@ -1,14 +1,15 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', ['ngRoute'])
+var myApp = angular.module('myApp', ['ngRoute']);
  
-.config(['$routeProvider', function($routeProvider) {
+myApp.config(['$routeProvider', function($routeProvider) {
  
     $routeProvider.otherwise({redirectTo: '/home'});
  
     $routeProvider.when('/home', {
-        templateUrl: '/assets/home.html'
+        templateUrl: '/assets/home.html',
+        controller: 'ChapterCtrl'
     });
     
     $routeProvider.when('/projects', {
@@ -30,5 +31,23 @@ angular.module('myApp', ['ngRoute'])
     $routeProvider.when('/contact', {
         templateUrl: '/assets/contact.html'
     });
- 
 }]);
+
+myApp.controller('ChapterCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.sendData = function(){
+        var data = JSON.stringify({
+            name: $scope.name,
+            email: $scope.email,
+            phone: $scope.phone,
+            date: $scope.date,
+            city: $scope.city,
+            country: $scope.country,
+            address: $scope.address,
+            intro: $scope.intro
+        });
+        $http.post("users", data)
+        .success(function(data, status) {
+            $scope.PostDataResponse = data;
+        });
+    }
+  }]);

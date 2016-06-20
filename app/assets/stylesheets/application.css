@@ -14,3 +14,7 @@
  *= require_self
  *= require lib/bootstrap.min.css
  */
+
+.borderless tr, .borderless td {
+    border: none;
+}
