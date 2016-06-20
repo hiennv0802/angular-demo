@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require lib/bootstrap.min.css
+ *= require_tree .
  */
 
 .borderless tr, .borderless td {
