@@ -3,7 +3,19 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all.limit(params[:data])
-		render json: @users
+		@number = (User.all.size/25.0).ceil
+		if(params[:time])
+			@time = params[:time]
+			start_point = 25 * @time.to_i
+			end_point = 25 * (@time.to_i + 1)
+			@user_paginations = []
+			User.all.each_with_index do |u, i|
+				if(i>=start_point) && (i<=end_point)
+					@user_paginations.push u
+				end
+			end
+		end
+ 		render json: {datas: {users: @users, numbers: @number, user_paginations: @user_paginations}}
 	end
 
 	def new

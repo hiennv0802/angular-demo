@@ -1,11 +1,7 @@
 <div class="jumbotron" ng-controller="users_controller">
 	<div id="paginate-list" class="pull-right">
 		<ul class="pagination">
-		    <li><a href="#">1</a></li>
-		    <li class="active"><a href="#">2</a></li>
-		    <li><a href="#">3</a></li>
-		    <li><a href="#">4</a></li>
-		   	<li><a href="#">5</a></li>
+		    <li style="cursor: pointer" ng-repeat=" number in getTimes(numbers)"><a ng-click="getUser($index)">{{$index}}</a></li>
   		</ul>
   		<select id="limit" class="form-control" ng-model="limit" ng-change="sendLimit(limit)" 
   			ng-options="limit as limit.count for limit in items">
